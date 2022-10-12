@@ -21,9 +21,9 @@ object Http4swithcatsiosandboxServer {
       // want to extract a segments not checked
       // in the underlying routes.
       httpApp = (
-  Http4swithcatsiosandboxRoutes.helloWorldRoutes(helloWorldAlg) <+>
-  Http4swithcatsiosandboxRoutes.jokeRoutes(jokeAlg)
-        ).orNotFound
+        Http4swithcatsiosandboxRoutes.helloWorldRoutes(helloWorldAlg) <+>
+        Http4swithcatsiosandboxRoutes.jokeRoutes(jokeAlg)
+      ).orNotFound
 
       // With Middlewares in place
       finalHttpApp = Logger.httpApp(true, true)(httpApp)
